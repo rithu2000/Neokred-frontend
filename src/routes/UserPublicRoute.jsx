@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Auth } from '../axios/axios';
 
 function UserPublicRoute(props) {
@@ -14,9 +14,9 @@ function UserPublicRoute(props) {
                 navigate('/login')
             }
         })()
-    }, [])
+    },[])
     if (!localStorage.getItem("token")) {
-        return <Navigate to="/login" />;
+        return navigate('/login')
     }
     if (localStorage.getItem("token")) {
         return props.children;
