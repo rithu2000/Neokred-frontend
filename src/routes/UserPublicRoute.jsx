@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { Auth } from '../axios/axios';
 
 function UserPublicRoute(props) {
+    const navigate = useNavigate()
 
     useEffect(() => {
         (async () => {
@@ -10,6 +11,7 @@ function UserPublicRoute(props) {
             console.log(data);
             if (!data.status) {
                 localStorage.clear()
+                navigate('/login')
             }
         })()
     }, [])
