@@ -16,9 +16,7 @@ function Login() {
 
   const handleChange = async (e) => {
     const { value, name } = e.target
-    console.log(value, name);
     setLoginData({ ...loginData, [name]: value })
-    console.log(loginData);
     setIsEmail(validator.isEmail(loginData?.emailAddress))
     setIsPassword(loginData?.password?.length >= 7)
   }

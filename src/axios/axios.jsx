@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const Api = axios.create({
-    baseURL: 'http://localhost:8000/api'
+    baseURL: 'https://w3djhp-8000.csb.app/api'
 })
 
 Api.interceptors.request.use((req) => {
